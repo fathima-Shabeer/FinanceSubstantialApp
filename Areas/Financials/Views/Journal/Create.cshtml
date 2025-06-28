@@ -1,0 +1,59 @@
+﻿@model FinanceSubstantialApp.Models.JournalEntry
+
+@{
+    ViewData["Title"] = "Create Journal Entry";
+}
+
+<h1>Create Journal Entry</h1>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label for="transactionDate" class="control-label">Transaction Date</label>
+                <input type="date" name="transactionDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="description" class="control-label">Description</label>
+                <input name="description" class="form-control" />
+            </div>
+
+            <hr />
+            <h4>Debit</h4>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="debitAccountId" class="control-label">Account to Debit</label>
+                    <select name="debitAccountId" class="form-control" asp-items="ViewBag.AccountId"></select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="debitAmount" class="control-label">Amount</label>
+                    <input type="number" step="0.01" name="debitAmount" class="form-control" />
+                </div>
+            </div>
+
+            <hr />
+            <h4>Credit</h4>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="creditAccountId" class="control-label">Account to Credit</label>
+                    <select name="creditAccountId" class="form-control" asp-items="ViewBag.AccountId"></select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="creditAmount" class="control-label">Amount</label>
+                    <input type="number" step="0.01" name="creditAmount" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Post Transaction" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
