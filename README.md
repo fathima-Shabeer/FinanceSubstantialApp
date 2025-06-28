@@ -1,3 +1,20 @@
+*Enterprise Resource Planning (ERP) Functionalities*
+
+*An ERP system is the backbone of your internal operations, focusing on efficiency, automation, and data integrity.*
+
+*Module*
+
+Financial Management
+
+*Core Functionality*
+
+* General Ledger and Chart of Accounts*
+*- Accounts Payable and Receivable*
+*- Budgeting and Forecasting*
+*- Financial Reporting (Balance Sheets, Income Statements)*
+
+
+
 *High-Level Plan*
 
 
